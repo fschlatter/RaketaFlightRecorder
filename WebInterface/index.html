@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telemetrics</title>
-    <script src="jquery.min.js"></script>
+    <title>Telemetry</title>
+    <script src="papaparse.min.js"></script>
 </head>
 <body>
-    <h1>Telemetrics</h1>
+    <h1>Telemetry</h1>
     <p>Alt: </p>
     <p>Baro: </p>
     <button href = "/calAlt">Calibrate Altitude</button>
     <p>Temp: </p>
     <p>Hum: </p>
     
+    <script type="text/javascript">
+            Papa.parse("data.csv", {
+                download: true,
+                header: true,
+                complete: function(results) {
+                    console.log(results.data[results.data.length - 1]);
+                }
+            });
+        
+    </script>
 </body>
 </html>
