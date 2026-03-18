@@ -1,5 +1,4 @@
-
-
+// VERSION 1.1-AP
 // Web page html
 const char index_html[] PROGMEM = R"rawliteral(
 <!DOCTYPE html>
